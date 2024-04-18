@@ -1,0 +1,140 @@
+// Variables
+$Soft-red: hsl(10, 79%, 65%);
+$Cyan: hsl(186, 34%, 60%);
+$Dark-brown: hsl(25, 47%, 15%);
+$Medium-brown: hsl(28, 10%, 53%);
+$Cream: hsl(27, 66%, 92%);
+$Very-pale-orange: hsl(33, 100%, 98%);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1.25rem;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: $Cream;
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px; /* 400 - 700 */
+}
+.card {
+  width: min(450px, 100%);
+}
+.card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $Soft-red;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.card__header div:first-child {
+  color: white;
+}
+.card__header div:first-child p:first-child {
+  margin: 0 0 0.25rem;
+}
+.card__header div:first-child p:last-child{
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.card__header div:last-child img {
+  width: 100%;
+}
+.card__body {
+  background: white;
+  border-radius: 1rem 1rem 0 0;
+  padding: 1.5rem;
+}
+.card__body h1 {
+  margin: 0 0 1.5rem;
+  font-size: 1.75rem;
+  color: $Dark-brown;
+}
+.card__body .card__body__chart {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 280px;
+  border-bottom: 1px solid rgba($Medium-brown, 0.15);
+  padding-bottom: 1.5rem;
+}
+.card__body .card__body__chart .day-chart {
+  width: 40px;
+  position: relative;
+  cursor: pointer;
+}
+.card__body .card__body__chart .day-chart .amount {
+  width: 55px;
+  position: absolute;
+  top: -40px;
+  left: -7.5px;
+  background: $Dark-brown;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: 0.5s ease;
+  opacity: 0;
+}
+.card__body .card__body__chart .day-chart:hover .amount {
+  opacity: 1;
+}
+.card__body .card__body__chart .day-chart .chart {
+  background: $Soft-red;
+  border-radius: 0.25rem;
+  margin-bottom: 10px;
+  transition: 0.5s ease;
+  position: relative;
+}
+.card__body .card__body__chart .day-chart .chart.current-day {
+  background: $Cyan;
+}
+.card__body .card__body__chart .day-chart .chart:hover {
+  opacity: 0.8;
+}
+.card__body .card__body__chart .day-chart .day {
+  display: block;
+  text-align: center;
+  height: 20px;
+  font-size: 1rem;
+  color: $Medium-brown;
+}
+.card__footer {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  padding: 0 1.5rem 1.5rem;
+  background: white;
+  border-radius: 0 0 1rem 1rem;
+}
+.card__footer div:first-child p:first-child {
+  color: $Medium-brown;
+  font-size: 1rem;
+  margin: 0;
+}
+.card__footer div:first-child p:last-child {
+  color: $Dark-brown;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+.card__footer div:last-child p:first-child {
+  margin: 0;
+  text-align: right;
+  font-weight: 700;
+  font-size: 1rem;
+  color: $Dark-brown;
+}
+.card__footer div:last-child p:last-child {
+  margin: 0 0 7px;
+  color: $Medium-brown;
+  font-size: 1rem;
+}
