@@ -3,7 +3,7 @@ const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const today = new Date();
 const currentDay = daysOfWeek[today.getDay()].toLowerCase();
 
-fetch('data.json')
+fetch('https://paula-tony.github.io/expenses-chart-component/js/data.json')
   .then((result) => result.json())
   .then((data) => {
     let maxValue = Math.max(...data.map((obj) => obj["amount"]));
